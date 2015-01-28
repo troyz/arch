@@ -168,13 +168,9 @@ SET GLOBAL log_slow_admin_statements='ON';
 
 ###选择MySQL存储引擎
 **MyISAM**
-
 : 不支持事务处理
-
 : 查询和添加效率高
-
 : 碎片多
-
 : 论坛
 
 > 碎片整理
@@ -182,15 +178,11 @@ SET GLOBAL log_slow_admin_statements='ON';
 > optimize table 表名
  
 **InnoDB**
-
 : 支持事务
-
 : 保存比较重要的信息
   
 **Memory**
-
 : 数据频繁更改，而且不需要在数据库中永久保存
-
 : Sesion入库
 
 
