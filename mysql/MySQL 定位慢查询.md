@@ -10,6 +10,7 @@ MySQL优化
 > - **MyISAM**：不支持事务，用于只读程序提高性能
 > - **InnoDB**：支持ACID事务、行级锁、并发
 > - Berkeley DB：支持事务
+
 <pre><code>//设置命令结束符
 DELIMITER $$
 
