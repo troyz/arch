@@ -37,7 +37,7 @@ BEGIN
     SET char_str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     SET return_str = '';
     SET i = 0;
-    WHILE i &lt len DO
+    WHILE i < len DO
 	SET return_str = CONCAT(return_str, SUBSTRING(char_str, FLOOR(1+RAND()*62), 1));
 	SET i = i + 1;
     END WHILE;
@@ -59,7 +59,7 @@ BEGIN
     DECLARE i INT DEFAULT 0;
     SET i = 0;
     SET autocommit=0; //设置事务不自动提交，但如果是MyISAM（不支持事务）数据库则无效。
-    WHILE i &lt _max_num DO
+    WHILE i < _max_num DO
 	SET i = i + 1;
 	INSERT INTO emp VALUES(_start + i, rand_string(6), 'salesman', 0001, CURDATE(), 2000, 400, rand_int());
     END WHILE;
