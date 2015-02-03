@@ -185,6 +185,10 @@ SET GLOBAL log_slow_admin_statements='ON';
 : 数据频繁更改，而且不需要在数据库中永久保存
 : Sesion入库
 
+###查询缓存
+> query_cache_size=10M
+>
+> query_cache_type=1
 
 [^startup]: MySQL5.6启动参数
 
