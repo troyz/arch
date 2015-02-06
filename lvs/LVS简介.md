@@ -3,7 +3,9 @@ LVS是Linux Virtual Server的简写，意即Linux虚拟服务器，是一个虚�
 Linux2.6后ipvs已经成为了Linux内核的一部分。
 ###2，LVS工作原理
 ![LVS工作原理](http://ww2.sinaimg.cn/large/6403b6a7jw1eoymzdbr9qj20g206dq32.jpg)
-ipvs工作在Linux内核进程中，从Linux2.6以后的版本都自带，所以我们只需要安装ipvsadm软件。
+
+> ipvs工作在Linux内核进程中，从Linux2.6以后的版本都自带，所以我们只需要安装ipvsadm软件。
+> [LVS官网](http://www.linuxvirtualserver.org/), [中文站点](http://zh.linuxvirtualserver.org/)
 
 ###3，LVS工作模型
 LVS有3种工作模型：
