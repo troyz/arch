@@ -36,5 +36,3 @@ LVS有3种工作模型：
 |  TUN  | ip隧道 |
 |       | 与DR原理相似。 |
 |       | director与real server可以不在同一个网络，可跨互联网。 |
-| | |
-
