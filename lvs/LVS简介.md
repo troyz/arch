@@ -20,7 +20,7 @@ LVS有3种工作模型：
 |       |  Director的dip作为rip的网关工作, dip/rip工作在内网  |
 |       | 所有的集群节点都必须在同一个网络，**不能跨网段** |
 |       | 通常情况下，rip是私有地址，仅用于集群节点间通信 |
-|       | director同时处理入栈出栈连接（来自客户端的请求和来自real server的响应数据包都要经过director） |
+|       | director同时处理**入栈出栈**连接（来自客户端的请求和来自real server的响应数据包都要经过director） |
 |       | **real server的网关要指向dip** |
 |       | 可以实现端口映射 |
 |       | real server可以是任意操作系统 |
@@ -28,7 +28,7 @@ LVS有3种工作模型：
 |  DR  | 直接路由 |
 |       | director和real server必须在同一个物理网络，不能跨路由器，（因为是基于mac地址转发的） |
 |       | rip可以使用公网ip，（万一director挂了，可以直接访问rip） |
-|       | director仅处理入栈请求，而real server的响应数据包不再经过director，因此real server的网关一定不能指向director |
+|       | director仅处理**入栈**请求，而real server的响应数据包不再经过director，因此real server的网关一定不能指向director |
 |       | director不支持端口映射 |
 |       | 大多数的操作系统都支持real ip |
 |       | director压力小，性能优。 |
