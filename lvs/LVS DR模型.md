@@ -2,7 +2,7 @@
 > VMWare10, CentOS6.3
 
 ###2，LVS DR网络规划
-![LVS NAT网络图](http://ww3.sinaimg.cn/large/6403b6a7jw1eoymgazu84j20qt07v3z8.jpg)
+![LVS DR网络图](http://ww2.sinaimg.cn/large/6403b6a7gw1eozzkqynzwg20j70id74a.gif)
 所有机器都只需要一张网卡，给Director的eth0网卡起个别名eth0:1即VIP的值；给RealServer的lo网卡起个别名lo:0，地址指向VIP
 > VIP: 虚拟IP，终端用户在浏览器端输入VIP，Director通过lvs调度算法将请求转给Real Server
 > RIP: Real Server的IP
