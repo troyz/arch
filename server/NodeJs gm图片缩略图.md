@@ -1,4 +1,5 @@
-
+> 我的另一篇文章: [Nginx/Apache图片缩略图技术](http://www.cnblogs.com/java-koma/p/4179858.html)
+> 
 > [gm官网](http://aheckmann.github.io/gm)
 ###1, 软件环境
 > nodejs
@@ -25,10 +26,10 @@ gm("图片路径").size(function(err,value){});
 gm("图片路径").filesize(function(err,value){});```
 ```
 
-> **resize函数**
-> [详细参数](http://www.graphicsmagick.org/GraphicsMagick.html#details-resize)
+> **resize函数**, [详细参数](http://www.graphicsmagick.org/GraphicsMagick.html#details-resize)
+> resize {w}x{h} {%} {@} {!} {<} {>}
 > 这里需要注意第3个参数
-> resize <width>x<height>{%}{@}{!}{<}{>}
+> 
 > **%** 
 > 表示按照width/height的百分比, resize(70, 0, '%')表示宽度为原先的70%
 > 
@@ -56,5 +57,3 @@ var gm = require('gm');
 var imageMagick = gm.subClass({ imageMagick: true })
 //使用方式同上，把上面的gm(..)函数替换成imageMagick(..)函数即可
 ```
-
-> Written with [StackEdit](https://stackedit.io/).
