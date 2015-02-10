@@ -169,6 +169,17 @@ mysql> CREATE FUNCTION gman_servers_set RETURNS STRING
 mysql> SELECT gman_servers_set('127.0.0.1:4730');
 ```
 
+> 如果出现异常信息：
+> ERROR 1126 (HY000): Can't open shared library 'libgearman_mysql_udf.so' (errno: 11 libgearman.so.8: cannot open shared object file: No such file or directory) 
+> 表示系统找不到 libgearman.so 文件，一般so都在/usr/local/lib目录下，修改配置文件/etc/ld.so.conf，将/usr/local/lib目录加入进去即可:
+
+```
+$ cat /etc/ld.so.conf
+include ld.so.conf.d/*.conf
+/usr/local/lib
+$ /sbin/ldconfig -v | grep gearman*
+```
+
 ####MySQL Trigger调用Gearman UDF实现同步
 ```
 DELIMITER $$
