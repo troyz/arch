@@ -1,5 +1,6 @@
 
 ```
+// 安装apr + apr-util
 $ wget http://mirror.bit.edu.cn/apache//apr/apr-1.5.1.tar.gz
 $ tar zxvf apr-1.5.1.tar.gz
 $ ./configure --prefix=/usr/local/apr
@@ -12,6 +13,7 @@ $ ./configure --with-apr=/usr/local/apr
 $ make
 $ make install
 
+// 安装hiredis, redis的C语言client
 $ git clone https://github.com/redis/hiredis
 $ cd hiredis
 $ make
@@ -33,6 +35,7 @@ CREATE FUNCTION free_resources RETURNS int SONAME "lib_mysqludf_redis_v2.so";
 ###测试
 ```
 // mysql
+// 设置redis服务器地址
 mysql> select redis_servers_set_v2("127.0.0.1",6379);
 mysql> select * from user_info;
 +----+------------+------+-------------------+---------+
@@ -40,6 +43,7 @@ mysql> select * from user_info;
 +----+------------+------+-------------------+---------+
 |  1 | Troy Zhang |   30 | java-koma@163.com | ChengDu |
 +----+------------+------+-------------------+---------+
+// 将user_info表的数据更新到redis中
 mysql> select redis_command_v2("hmset", concat("user_info:", id), 'name', name, 'age', age, 'email', email, 'addr', addr) from user_info;
 
 // redis
